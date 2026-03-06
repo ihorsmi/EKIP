@@ -16,21 +16,6 @@ Built for AI Dev Days Hackathon 2025 — AI Apps & Agents track.
 - Azure-native deployment on Container Apps with Key Vault, Service Bus, AI Search, OpenAI, and Monitor
 - Enterprise controls: Entra ID RBAC, managed identity, correlation IDs, no secrets in code
 
-## Deployment Status
-
-As of March 4, 2026:
-
-- Infra baseline: deployed and stable (RG, ACR, Key Vault, Service Bus, AI Search, Cosmos DB, Log Analytics, Container Apps Environment)
-- App tier on Azure Container Apps: healthy
-- Backend URL: `https://ekip-backend-01.graymushroom-404701f7.northeurope.azurecontainerapps.io`
-- Frontend URL: `https://ekip-frontend-01.graymushroom-404701f7.northeurope.azurecontainerapps.io`
-- Active cloud image tag: `v0.1.2`
-- Smoke check: `/health` passes
-
-Known blocker:
-
-- Azure OpenAI model deployments (`gpt-4o`, `text-embedding-3-large`) cannot be provisioned in the current subscription/region due to quota (`InsufficientQuota`).
-- When those deployments are unavailable, query/chat flows can fail with `DeploymentNotFound`.
 
 ## What EKIP Does
 
@@ -62,58 +47,6 @@ EKIP ingests enterprise documents, indexes them for hybrid retrieval (keyword + 
 ## Architecture
 
 ![EKIP Architecture Diagram](EKIP-Diagram.drawio.png)
-
-```text
-                         +-----------------------------------------+
-                         | Microsoft Entra ID                      |
-                         | AuthN/AuthZ + RBAC (Admin/Analyst/Viewer) |
-                         +-------------------+---------------------+
-                                             |
-                                             v
-+---------------------------+      +---------------------------+
-| Azure Container Apps      | ---> | Azure Container Apps      |
-| Frontend (Next.js)        |      | Backend (FastAPI)         |
-+-------------+-------------+      +-------------+-------------+
-              |                                  |
-              |                                  +-------------------------------+
-              |                                                                  |
-              |                                                       +----------v-----------+
-              |                                                       | Cosmos DB            |
-              |                                                       | conversation + audit |
-              |                                                       +----------------------+
-              |
-              |                                  +-------------------------------+
-              |                                  |                               |
-              v                                  v                               v
-+---------------------------+      +---------------------------+     +---------------------------+
-| Blob Storage (raw docs)   | ---> | Service Bus (ingest q)    | --> | Azure Container Apps      |
-| upload artifacts          |      | doc-ingest                |     | Worker (ingestion)        |
-+---------------------------+      +---------------------------+     +-------------+-------------+
-                                                                                   |
-                                                                                   v
-                                                                       +-----------+-----------+
-                                                                       | Azure AI Search       |
-                                                                       | hybrid/vector index   |
-                                                                       +-----------+-----------+
-                                                                                   |
-                                                                                   v
-                                                                       +-----------+-----------+
-                                                                       | Azure OpenAI          |
-                                                                       | gpt-4o + embeddings* |
-                                                                       +-----------------------+
-
-+---------------------------+      +---------------------------+      +-----------------------+
-| Azure Key Vault           |      | Azure Monitor             |      | Azure Container       |
-| secret references         |      | App Insights + Log Analytics      | Registry (ACR)        |
-+---------------------------+      +---------------------------+      +-----------------------+
-
-+---------------------------+
-| Azure AI Foundry Hub      |
-| agent hosting/routing/evals design path |
-+---------------------------+
-
-*Current known limitation: model deployments blocked by AOAI quota in this subscription/region.
-```
 
 ## Demo Video
 
@@ -235,12 +168,7 @@ Mitigation options:
 ## Documentation
 
 - [Demo quickstart](docs/DEMO_QUICKSTART.md)
-- [Hard docs demo notes](docs/HARD_DOCS_DEMO_NOTES.md)
-- [Data pack usage](docs/USAGE_DATA_PACK.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
-- [Submission checklist](docs/submission/CHECKLIST.md)
-- [Submission demo script](docs/submission/DEMO_SCRIPT_2MIN.md)
-- [Team info template](docs/submission/TEAM_INFO_TEMPLATE.md)
 
 ## License
 
