@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+PREFIX="${PREFIX:-ekip}"
+SUFFIX="${SUFFIX:-01}"
+RESOURCE_GROUP_NAME="${RESOURCE_GROUP_NAME:-rg-ekip-demo}"
+LOCATION="${AZURE_LOCATION:-westeurope}"
+
+ACR_NAME="${PREFIX}-acr-${SUFFIX}"
+KEYVAULT_NAME="${PREFIX}-kv-${SUFFIX}"
+COSMOS_NAME="${PREFIX}-cosmos-${SUFFIX}"
+SEARCH_NAME="${PREFIX}-search-${SUFFIX}"
+SERVICEBUS_NAME="${PREFIX}-sb-${SUFFIX}"
+STORAGE_NAME="${PREFIX}-st-${SUFFIX}"
+LOG_ANALYTICS_NAME="${PREFIX}-law-${SUFFIX}"
+CONTAINER_APPS_ENV_NAME="${PREFIX}-acaenv-${SUFFIX}"
+BACKEND_APP_NAME="${PREFIX}-backend-${SUFFIX}"
+WORKER_APP_NAME="${PREFIX}-worker-${SUFFIX}"
+FRONTEND_APP_NAME="${PREFIX}-frontend-${SUFFIX}"
+
+write_section() {
+  printf '\n=== %s ===\n' "$1"
+}

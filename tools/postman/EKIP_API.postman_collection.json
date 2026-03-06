@@ -1,0 +1,101 @@
+{
+  "info": {
+    "name": "EKIP API (Data Pack)",
+    "_postman_id": "00000000-0000-0000-0000-000000000100",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{API_BASE}}/health",
+          "host": [
+            "{{API_BASE}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Upload (multipart)",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{API_BASE}}/upload",
+          "host": [
+            "{{API_BASE}}"
+          ],
+          "path": [
+            "upload"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Query",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is EKIP?\",\n  \"top_k\": 5\n}"
+        },
+        "url": {
+          "raw": "{{API_BASE}}/query",
+          "host": [
+            "{{API_BASE}}"
+          ],
+          "path": [
+            "query"
+          ]
+        }
+      }
+    },
+    {
+      "name": "History",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{API_BASE}}/history?limit=20",
+          "host": [
+            "{{API_BASE}}"
+          ],
+          "path": [
+            "history"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "20"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "API_BASE",
+      "value": "http://localhost:8000"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "resourceGroupName": {
+      "value": "rg-ekip-demo"
+    },
+    "namePrefix": {
+      "value": "ekip"
+    },
+    "nameSuffix": {
+      "value": "01"
+    },
+    "uniqueSuffix": {
+      "value": ""
+    },
+    "deployApps": {
+      "value": true
+    },
+    "deployModels": {
+      "value": true
+    },
+    "imageTag": {
+      "value": ""
+    },
+    "openAiApiKeySecretId": {
+      "value": "https://example.vault.azure.net/secrets/ekip-openai-api-key/00000000000000000000000000000000"
+    },
+    "searchAdminKeySecretId": {
+      "value": "https://example.vault.azure.net/secrets/ekip-search-admin-key/00000000000000000000000000000000"
+    },
+    "serviceBusConnectionStringSecretId": {
+      "value": "https://example.vault.azure.net/secrets/ekip-servicebus-connection-string/00000000000000000000000000000000"
+    },
+    "storageConnectionStringSecretId": {
+      "value": "https://example.vault.azure.net/secrets/ekip-storage-connection-string/00000000000000000000000000000000"
+    },
+    "cosmosKeySecretId": {
+      "value": "https://example.vault.azure.net/secrets/ekip-cosmos-key/00000000000000000000000000000000"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+﻿fastapi==0.115.6
+uvicorn[standard]==0.31.1
+pydantic==2.11.7
+pydantic-settings==2.5.2
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+# Azure OpenAI via OpenAI Python SDK (AzureOpenAI client)
+openai>=1.99.0,<2.0.0
+tenacity==9.0.0
+httpx==0.27.2
+
+# Local dev services
+redis==5.0.8
+qdrant-client==1.11.2
+
+# Document parsing
+pypdf==4.3.1
+python-docx==1.1.2
+
+# Microsoft Agent Framework (optional for maf_demo only).
+# Keep out of default app deps to avoid resolver conflicts in backend/worker images.
+# Install separately: pip install -r requirements-agent-framework.txt
+
+# Utilities
+orjson==3.10.7
+
+azure-identity==1.17.1
+azure-core>=1.35.0,<2.0.0
+
+# Azure services (provider interfaces allow local or Azure adapters)
+azure-storage-blob>=12.22.0,<13.0.0
+azure-servicebus>=7.12.0,<8.0.0
+azure-search-documents>=11.6.0,<12.0.0
+azure-cosmos>=4.8.0,<5.0.0
+
+# MCP runtime used by ORCHESTRATOR_MODE=maf
+mcp>=1.24.0,<2.0.0
+msmcp-azure>=2.0.0b23,<3.0.0
+

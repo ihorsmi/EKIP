@@ -1,0 +1,16 @@
+﻿title = "EKIP gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Known-safe placeholders and synthetic demo content"
+paths = [
+  '''^data/sample_docs/''',
+  '''^data/queue_messages/''',
+  '''^docs/submission/''',
+  '''^infra/bicep/params/demo\.apps\.parameters\.json$''',
+]
+regexes = [
+  '''https://example\.vault\.azure\.net/secrets/[a-z0-9\-]+/[0-9]{32}''',
+]

@@ -1,0 +1,15 @@
+{
+  "doc_id": "azure_landingzone_notes",
+  "blob_url": "https://<storage-account>.blob.core.windows.net/raw/Azure_LandingZone_Notes.txt",
+  "filename": "Azure_LandingZone_Notes.txt",
+  "content_type": "text/plain",
+  "uploaded_by": "demo.user@contoso.com",
+  "uploaded_at": "2026-02-23T13:21:31Z",
+  "metadata": {
+    "source": "data_pack",
+    "tags": [
+      "demo",
+      "hackathon"
+    ]
+  }
+}

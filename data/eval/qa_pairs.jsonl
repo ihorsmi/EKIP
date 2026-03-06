@@ -1,0 +1,7 @@
+{"id": "q001", "question": "What are the update cadence requirements for SEV0 and SEV1 incidents?", "expected_answer_contains": ["SEV0", "15", "SEV1", "30"], "source": "Incident_Response_Runbook.docx"}
+{"id": "q002", "question": "What is EKIP and what does it do?", "expected_answer_contains": ["Enterprise Knowledge Intelligence Platform", "ingests", "answers", "citations"], "source": "Product_FAQ_EKIP.docx"}
+{"id": "q003", "question": "Which roles exist in the Security Access Policy and what can a Viewer do?", "expected_answer_contains": ["Admin", "Analyst", "Viewer", "read-only"], "source": "Security_Access_Policy.txt"}
+{"id": "q004", "question": "What is the preferred pattern for PaaS connectivity in the Azure Landing Zone notes?", "expected_answer_contains": ["Private Link", "Disable public network access"], "source": "Azure_LandingZone_Notes.txt"}
+{"id": "q005", "question": "What are the core collaboration hours in the handbook excerpt?", "expected_answer_contains": ["10:00", "16:00"], "source": "Employee_Handbook_EKIP.pdf"}
+{"id": "q006", "question": "How often should Key Vault secrets be rotated according to the policy?", "expected_answer_contains": ["90 days", "180 days"], "source": "Security_Access_Policy.txt"}
+{"id": "q007", "question": "What file types are initially supported by EKIP?", "expected_answer_contains": ["PDF", "DOCX", "TXT"], "source": "Product_FAQ_EKIP.docx"}

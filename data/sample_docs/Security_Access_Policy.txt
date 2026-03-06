@@ -1,0 +1,19 @@
+Security Access Policy (Draft)
+Doc ID: SEC-ACP-007
+
+Roles:
+- Admin: can manage resources, set RBAC, rotate secrets, and approve access requests.
+- Analyst: can upload documents, run queries, view citations, and generate reports.
+- Viewer: read-only access to chat answers and dashboards.
+
+MFA:
+- Required for all roles. Conditional Access enforces MFA for any access outside trusted locations.
+
+Key Vault:
+- All secrets stored in Key Vault; apps use Managed Identity to access secrets.
+- Secret rotation cadence: 90 days (keys), 180 days (certificates).
+- Break-glass account: stored offline; audited monthly.
+
+Audit:
+- All agent actions are logged with correlation IDs.
+- Conversation and agent logs retained for 180 days (minimum).

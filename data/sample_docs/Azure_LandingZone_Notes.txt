@@ -1,0 +1,19 @@
+EKIP — Azure Landing Zone Notes (Internal)
+Version: 1.0
+Owner: Cloud Platform Team
+
+Key principles:
+- Hub-and-spoke network with a central Hub VNet hosting shared services (Azure Firewall, VPN/ER Gateway, Bastion).
+- Spokes per workload (prod/non-prod separated).
+- All outbound internet traffic egresses via Azure Firewall in the Hub.
+- Private Link is preferred for PaaS. Disable public network access where possible.
+- Use Azure Policy to enforce: allowed locations, tagging, private endpoints, and diagnostics.
+
+Naming conventions:
+- Resource Group: rg-<workload>-<env>-<region>
+- Virtual Network: vnet-<workload>-<env>-<region>
+- Subnet: snet-<purpose>-<workload>
+
+Operational notes:
+- Enable diagnostic settings to send logs to Log Analytics.
+- Enable Defender for Cloud plans for key services.

@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [
+    "doc_id",
+    "blob_url",
+    "filename",
+    "content_type",
+    "uploaded_by",
+    "uploaded_at"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string"
+    },
+    "blob_url": {
+      "type": "string"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "content_type": {
+      "type": "string"
+    },
+    "uploaded_by": {
+      "type": "string"
+    },
+    "uploaded_at": {
+      "type": "string",
+      "description": "ISO8601 UTC timestamp"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

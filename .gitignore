@@ -1,0 +1,49 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.next/
+dist/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env + secrets
+.env
+.env.*
+!.env.example
+*.local
+*.secret
+*.pem
+*.pfx
+*.key
+*.token
+
+# Runtime / deployment outputs
+infra/out/
+**/.outputs/
+**/.cache/
+backend/data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
